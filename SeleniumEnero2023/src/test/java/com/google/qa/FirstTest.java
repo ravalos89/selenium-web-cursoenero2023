@@ -27,6 +27,7 @@ public class FirstTest {
 		System.out.println("El titulo de la ventana es"+title);
 		
 		Assert.assertEquals(driver.getTitle(), "Google");
+		
 	  
 	  
   }
