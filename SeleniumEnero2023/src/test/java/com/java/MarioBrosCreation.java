@@ -33,6 +33,17 @@ public class MarioBrosCreation {
 		this.name = name;
 	}
 	
+	// Constructor overloaded
+	public MarioBrosCreation(String overol, String gorro, boolean hongoMario) {
+		this.isalive = true;
+		this.overol = overol;
+		this.gorro = gorro;
+		this.marioState = "Pequeño";
+		this.numPiernas = 2;
+		this.hongoMario = hongoMario;
+		this.name = "Mario";
+	}
+	
 	public MarioBrosCreation() {
 		
 	}
@@ -40,7 +51,7 @@ public class MarioBrosCreation {
 
 
 	// Comportamientos
-	public void correr() {
+	void correr() {
 		System.out.println(name+" esta corriendo");
 	}
 	public void saltar() {

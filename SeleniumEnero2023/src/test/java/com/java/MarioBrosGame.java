@@ -26,8 +26,13 @@ public class MarioBrosGame {
 		System.out.println(" el color del gorro de "+luigi.name+" es :"+luigi.gorro);
 		
 //		Using constructor
-		MarioBrosCreation marioPrototype1 = new MarioBrosCreation(false, "azul", "rojo", "pequeño", 2, false, "MArio Prototype1");
+		MarioBrosCreation marioPrototype1 = new MarioBrosCreation(false, "azul", "rojo", "pequeño", 200, false, "MArio Prototype1");
 		marioPrototype1.correr();
+		
+		MarioBrosCreation marioPrototype2 = new MarioBrosCreation("Azul", "Rojo", false);
+		marioPrototype2.correr();
+		
+		
 
 	}
 

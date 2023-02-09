@@ -35,12 +35,22 @@ public class Arreglos {
 		nombres[1][0] = "Pepito";
 		nombres[1][1] = "HEredia";
 		
+		// Array - Countries
+		int colocacion = 1;
+		String [][] countries = new String[5][5];
+		countries[0][0]= "Italia";
+		countries[colocacion][1]= "Francia";
+		countries[4][5]= "Brasil";
+		
+		System.out.println("Soy el pais "+ countries[4][5]);
+		
+		
 		System.out.println("El nombre es: "+nombres[0][0]+nombres[0][1]);
 		
 		// Print Array
 		System.out.println(Arrays.deepToString(nombres));
 		
-		// Muktidimensionales
+		// Multidimensionales
 		boolean[][][][][] arraydim = new boolean[10][10][10][10][10];
 		
 	}
