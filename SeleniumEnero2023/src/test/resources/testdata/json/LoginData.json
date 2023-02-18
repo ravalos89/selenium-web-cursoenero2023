@@ -1,0 +1,6 @@
+{
+	"username": "Admin",
+	"password": "YWRtaW4xMjM=",
+	"incorrectPassword": "test123",
+	"expectedErrorMessage": "Invalid credentials"
+}
