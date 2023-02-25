@@ -19,7 +19,9 @@ public class Home extends Base{
 	 * 
 	 */
 	public boolean profilePictureisDisplayed() {
+		takeScreenshot("After login");
 		waitForElementPresent(imgOrangeHrmHeader);
+		takeScreenshot("Validate Img Orange Header");
 		return isDisplayed(imgProfilePicture);		
 	}
 }

@@ -1,10 +1,13 @@
 package com.orangehrm.selenium;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import org.apache.commons.codec.binary.Base64;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.codec.binary.Base64;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.openqa.selenium.By;
@@ -19,6 +22,8 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
 
 public class Base {
 	
@@ -85,6 +90,7 @@ public class Base {
 		try{
 			waitForElementPresent(locator);
 			//Method screenshot
+			//takeScreenshot("Click object "+locator.toString().replace(":", "").replace("/", ""));
 			driver.findElement(locator).click();
 		}catch(NoSuchElementException e) {
 			e.printStackTrace();
@@ -139,6 +145,25 @@ public class Base {
 	public String getEncryptedPassword(String encryptedPwd) {
 		byte[] decodedBytes = Base64.decodeBase64(encryptedPwd);
 		return new String(decodedBytes);
+	}
+	
+	/*
+	 * Take screenshot
+	 * 
+	 * @author Ricardo Avalos
+	 * @throws IOException
+	 */
+	public String takeScreenshot(String fileName){
+		try {
+			String pathFileName= GlobalVariables.PATH_SCREENSHOTS + fileName + ".png";
+			Screenshot screenshot = new AShot().takeScreenshot(driver);
+			ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
+			return pathFileName;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+
 	}
 	
 

@@ -14,8 +14,11 @@ public class LoginPOM {
 	
 	WebDriver driver;
 	Base base;
+	
+	//Lawyer 2
 	Login login;
 	Home home;
+	
 	String username, password, incorrectPassword, expectedErrorMessage;
 	String jsonName = "LoginData";
 	

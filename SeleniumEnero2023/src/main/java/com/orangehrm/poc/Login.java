@@ -14,7 +14,7 @@ public class Login extends Base{
 	// Objects
 	By txtUsername = By.name("username");
 	By txtPassword = By.name("password");
-	By btnLogin = By.xpath("//button[@type=\"submit\"]");
+	By btnLogin = By.xpath("//button[@type='submit']");
 	By lblLoginError = By.xpath("//div[@class='orangehrm-login-error']");
 	By lblLoginErrorText = By.xpath("//p[contains(@class, 'content-text')]");
 	
@@ -36,10 +36,12 @@ public class Login extends Base{
 	
 	public boolean validateLoginError() {
 		waitForElementPresent(lblLoginError);
+		takeScreenshot("Validate Login Error");
 		return isDisplayed(lblLoginError);
 	}
 	
 	public String validateLoginErrorText() {
+		takeScreenshot("Validate Login Error Text");
 		return getTextFromObject(lblLoginErrorText);
 	}
 
