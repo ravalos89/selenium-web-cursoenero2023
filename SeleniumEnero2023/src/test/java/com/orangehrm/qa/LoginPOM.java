@@ -5,10 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import com.orangehrm.poc.Login;
+
 import com.orangehrm.poc.Home;
+import com.orangehrm.poc.Login;
 import com.orangehrm.selenium.Base;
 import com.orangehrm.selenium.GlobalVariables;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class LoginPOM {
 	
@@ -21,6 +25,10 @@ public class LoginPOM {
 	
 	String username, password, incorrectPassword, expectedErrorMessage;
 	String jsonName = "LoginData";
+	
+	// Extent reports
+	ExtentReports extentReports;
+	ExtentTest extentTest;
 	
   
   @BeforeTest
@@ -35,6 +43,9 @@ public class LoginPOM {
 	  this.password = base.getJSONValue(jsonName, "password");
 	  this.incorrectPassword = base.getJSONValue(jsonName, "incorrectPassword");
 	  this.expectedErrorMessage = base.getJSONValue(jsonName, "expectedErrorMessage");
+	  
+	  extentReports = new ExtentReports(GlobalVariables.PATH_SCREENSHOTS+"/ExtentReport.html");
+	  extentTest = extentReports.startTest(this.getClass().getSimpleName());
   }
   
   @Test
@@ -42,6 +53,7 @@ public class LoginPOM {
 	  
 	  // Step 1
 	  base.launchBrowser(GlobalVariables.QA_URL);
+	  extentTest.log(LogStatus.PASS, "Open Orange Page", extentTest.addScreenCapture(base.takeScreenshot("Launch Browser")));
 	  
 	  // Step 2
 	  login.login(username, password);
@@ -70,6 +82,11 @@ public class LoginPOM {
   public void afterTest() {
 	  // Close Browser
 	  driver.close();
+	  
+	  // Close Reports
+	  extentReports.endTest(extentTest);
+	  extentReports.flush();
+	  
   }
 
 }

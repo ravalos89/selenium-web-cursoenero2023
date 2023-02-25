@@ -8,16 +8,16 @@
       <![CDATA[Logging with user: Admin]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-02-25T14:39:02Z" name="Default suite" finished-at="2023-02-25T14:39:20Z" duration-ms="18758">
+  <suite started-at="2023-02-25T15:00:32Z" name="Default suite" finished-at="2023-02-25T15:00:58Z" duration-ms="26098">
     <groups>
     </groups>
-    <test started-at="2023-02-25T14:39:02Z" name="Default test" finished-at="2023-02-25T14:39:20Z" duration-ms="18758">
+    <test started-at="2023-02-25T15:00:32Z" name="Default test" finished-at="2023-02-25T15:00:58Z" duration-ms="26098">
       <class name="com.orangehrm.qa.LoginPOM">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T14:39:02Z" name="beforeTest" finished-at="2023-02-25T14:39:07Z" duration-ms="5820" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T15:00:32Z" name="beforeTest" finished-at="2023-02-25T15:00:39Z" duration-ms="7617" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc002LoginFailed()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T14:39:07Z" name="tc002LoginFailed" finished-at="2023-02-25T14:39:20Z" duration-ms="12784" status="PASS">
+        <test-method signature="tc001LoginUser()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T15:00:39Z" name="tc001LoginUser" finished-at="2023-02-25T15:00:57Z" duration-ms="18005" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launching... https://opensource-demo.orangehrmlive.com/web/index.php/auth/login]]>
@@ -26,8 +26,8 @@
               <![CDATA[Logging with user: Admin]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tc002LoginFailed -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T14:39:20Z" name="afterTest" finished-at="2023-02-25T14:39:20Z" duration-ms="133" status="PASS">
+        </test-method> <!-- tc001LoginUser -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.orangehrm.qa.LoginPOM@2d778add]" started-at="2023-02-25T15:00:57Z" name="afterTest" finished-at="2023-02-25T15:00:58Z" duration-ms="449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
